@@ -14,6 +14,15 @@ jobs:
       with:
         python-version: '3.12'
     # Add step to install dependencies
+    - name: Install dependencies
+      run: pip install pytest
+    - name: Run Python tests
+      run: pytest exercise_2
 
   lint:
     # Complete the lint job configuration
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+    - 
