@@ -20,6 +20,7 @@ jobs:
 
   # Chain the next job to the previous one and make it deploy
   # to different environments with manual approvals
+  # test
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
