@@ -15,13 +15,14 @@ jobs:
       - name: Login to Docker
         uses: docker/login-action@v2
         with:
-          docker_username: ${{ DOCKER_USERNAME }}
-          docker_tokent: ${{ DOCKER_TOKEN }}
+          docker_username: ${{ secrets.DOCKER_USERNAME }}
+          docker_tokent: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build
         uses: docker/build-push-action@v5
         with:
-          context: .
-          platforms: linux/amd64
+          context: exercise_3
+          push: true
+          tags: ${{ DOCKER_USERNAME }}/my-app:latest
   
   # More jobs can be added

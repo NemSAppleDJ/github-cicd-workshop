@@ -21,7 +21,3 @@ jobs:
 
   lint:
     # Complete the lint job configuration
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
