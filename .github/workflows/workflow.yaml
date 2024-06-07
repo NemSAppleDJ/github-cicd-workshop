@@ -11,9 +11,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
-      # Add more steps here
-      - name: Docker run
-        run: docker Dockerfile
+
+      - name: Login to Docker
+        uses: docker/login-action@v2
+        with:
+          docker_username: ${{ DOCKER_USERNAME }}
+          docker_tokent: ${{ DOCKER_TOKEN }}
+
+      - name: Build
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          platforms: linux/amd64
   
   # More jobs can be added
